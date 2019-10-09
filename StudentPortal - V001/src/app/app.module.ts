@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterBarComponent } from './shared/footer-bar/footer-bar.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
-import { CalendarComponent } from './pages/calendar/calendar.component';
+import { CourseComponent } from './pages/course/course.component';
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,11 +18,11 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
     FooterBarComponent,
     SideBarComponent,
     NavBarComponent,
-    CalendarComponent
+    CourseComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
