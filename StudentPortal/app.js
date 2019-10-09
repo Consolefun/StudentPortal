@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 mongoose.connect ('')
   .then(() => console.log('connection successful'))
   .catch((err) => console.error(err));
-  
+
 var apiRouter = require('./routes/student');
 
 var app = express();
@@ -19,6 +19,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/StudentPortal')));
 app.use('/', express.static(path.join(__dirname, 'dist/StudentPortal')));
 app.use('/api', apiRouter);
+
+// app.use(express.static(path.join(__dirname, 'dist/StudentPortal')));
+// app.use('/student', express.static(path.join(__dirname, 'dist/StudentPortal')));
+// app.use('/student-details/:id', express.static(path.join(__dirname, 'dist/StudentPortal')));
+// app.use('/student-create', express.static(path.join(__dirname, 'dist/StudentPortal')));
+// app.use('/student-edit/:id', express.static(path.join(__dirname, 'dist/StudentPortal')));
+// app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
