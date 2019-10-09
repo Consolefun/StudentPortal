@@ -1,7 +1,86 @@
 <app-nav-bar></app-nav-bar>
 
+<!--This page has two form; one is about the login, and the other is for the sign up-->
+<!--Bootstrap is used-->
 
 
+
+<!--<section style="background-color:#114773; background-image:  url(../assets/img/background.png);">-->
+<section class="StudentHomePage">
+<!--  The first container is for the sign in form-->
+    <div class="container" *ngIf="signInStudentP">
+      <div class="row">
+        <div class="text-white bg-primary align-self-center col-md-4">
+            <h2 class="py-3 left-side text-center">Student Portal</h2>
+        </div>
+        <div class="col-md-8 py-3 border">
+          <h4 class="pb-2 text-danger">Login Form</h4>
+          <form class="form" (ngSubmit)="LogIn($event)">
+            <div class="row">
+<!--              Using two way binding to get the values -->
+              <div class=" col-md-6">
+                <input class="form-control" name = "studentEmailPortalSystem" placeholder="Enter your E-mail address"  type="text" [(ngModel)]="studentEmailPortalSystem" required>
+              </div>
+              <div class="col-md-6">
+                <input class="form-control" name = "StudentPasswordPortalSystem" placeholder="Enter your Password" type="password" [(ngModel)]="StudentPasswordPortalSystem" required>
+              </div>
+            </div>
+<!--            This div is to show an error message in for authentication-->
+            <div class="d-flex justify-content-center">
+              <span class="pb-4 text-danger">{{ErrorMessageFirebase}}</span>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button name="submit" class="btn btn-primary mx-2" value="submit">Log in</button>
+              <button class="btn btn-danger" type="button" (click)="Register()">register</button> <!--once the user click the register button, it is going to use the function-->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+<!--This is the second container, which is for the sign up-->
+    <div class="container" *ngIf="registerStudentP">
+      <div class="row">
+        <div class="col-md-4 align-self-center bg-danger text-white text-center">
+          <div class="left-side">
+            <h2 class="py-3">Registration Form</h2>
+          </div>
+        </div>
+        <div class="col-md-8 py-5 border bg-white">
+          <h4 class="pb-4 text-black-50">Please fill with your details</h4>
+          <form class="form" (ngSubmit)="SignUp($event)">
+            <div class="row">
+              <!--              Using two way binding to get the values -->
+              <div class="form-group col-md-6">
+                <span>Email address:</span>
+                <input class="form-control" name = "studentEmailPortalSystem"   type="text" [(ngModel)]="studentEmailPortalSystem" required>
+              </div>
+              <div class="form-group col-md-6">
+                <span>Password:</span>
+                <input class="form-control" name ="StudentPasswordPortalSystem"  type="password" [(ngModel)]="StudentPasswordPortalSystem" required>
+              </div>
+              <div class="form-group col-md-3">
+                <span>First name:</span>
+                <input class="form-control" name ="StudentFnamePortalSystem"   type="text" [(ngModel)]="StudentFnamePortalSystem" required>
+              </div>
+              <div class="form-group col-md-3">
+                <span>Last name:</span>
+                <input class="form-control" name ="StudentLnamePortalSystem"  type="text" [(ngModel)]="StudentLnamePortalSystem" required>
+              </div>
+            </div>
+<!--            This is also for authentication-->
+            <div class="justify-content-center d-flex">
+              <span class="pb-4 text-danger">{{ErrorMessageFirebase}}</span>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-info mx-2" value="submit" name="submit" >Submit</button>
+              <button class="btn btn-danger" type="button" (click)="Cancel()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+</section>
 
 
 
