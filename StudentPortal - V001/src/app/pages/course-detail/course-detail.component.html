@@ -1,0 +1,26 @@
+<app-nav-bar></app-nav-bar>
+<p>course-detail works!</p>
+
+
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/course']"><mat-icon>list</mat-icon></a>
+</div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title><h2>{{course.name}}</h2></mat-card-title>
+    <mat-card-subtitle>{{course.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <dl>
+      <dt>Course's name:</dt>
+      <dd>{{course.name}}</dd>
+      <dt>Course's id</dt>
+      <dd>{{course.id}}</dd>
+      <dt>Update Date:</dt>
+      <dd>{{course.updated_date | date}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="['/course-edit', course._id]"><mat-icon>edit</mat-icon></a>
+  </mat-card-actions>
+</mat-card>

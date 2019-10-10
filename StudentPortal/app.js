@@ -5,11 +5,19 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 
 var mongoose = require('mongoose');
+<<<<<<< HEAD
 mongoose.connect ('mongodb+srv://William:12345@cluster0-wldvr.mongodb.net/test?retryWrites=true&w=majority')
   .then(() => console.log('connection successful'))
   .catch((err) => console.error(err));
 
 var apiRouter = require('./routes/student');
+=======
+mongoose.connect ('mongodb+srv://kmdk2t:123k123@cluster0-zrshr.mongodb.net/Data?retryWrites=true')
+  .then(() => console.log('connection successful'))
+  .catch((err) => console.error(err));
+
+var apiRouter = require('./routes/courses');
+>>>>>>> 9b3cce8d1c681be8a458fb2931fbda21d42b4706
 
 var app = express();
 
@@ -17,8 +25,19 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/StudentPortal')));
-app.use('/', express.static(path.join(__dirname, 'dist/StudentPortal')));
+app.use('/course', express.static(path.join(__dirname, 'dist/StudentPortal')));
+app.use('/home', express.static(path.join(__dirname, 'dist/StudentPortal')));
+app.use('/portal', express.static(path.join(__dirname, 'dist/StudentPortal')));
+app.use('/setting', express.static(path.join(__dirname, 'dist/StudentPortal')));
 app.use('/api', apiRouter);
+// app.use('/course', apiRouter);
+
+// app.use(express.static(path.join(__dirname, 'dist/StudentPortal')));
+// app.use('/student', express.static(path.join(__dirname, 'dist/StudentPortal')));
+// app.use('/student-details/:id', express.static(path.join(__dirname, 'dist/StudentPortal')));
+// app.use('/student-create', express.static(path.join(__dirname, 'dist/StudentPortal')));
+// app.use('/student-edit/:id', express.static(path.join(__dirname, 'dist/StudentPortal')));
+// app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -9,7 +9,21 @@ import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { CourseComponent } from './pages/course/course.component';
 import {HttpClientModule} from '@angular/common/http';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {InputsModule, WavesModule, ButtonsModule, CardsModule, IconsModule} from 'angular-bootstrap-md';
+import {
+  MatInputModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatSortModule,
+  MatTableModule,
+  MatIconModule,
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule } from '@angular/material';
+import { CourseDetailComponent } from './pages/course-detail/course-detail.component';
+import { CourseCreateComponent } from './pages/course-create/course-create.component';
+import { CourseEditComponent } from './pages/course-edit/course-edit.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +32,27 @@ import {HttpClientModule} from '@angular/common/http';
     FooterBarComponent,
     SideBarComponent,
     NavBarComponent,
-    CourseComponent
+    CourseComponent,
+    CourseDetailComponent,
+    CourseCreateComponent,
+    CourseEditComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule
+    AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    InputsModule,
+    WavesModule,
+    ButtonsModule, CardsModule, IconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

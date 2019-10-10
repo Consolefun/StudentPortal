@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var mongoose = require('mongoose');
 mongoose.connect ('mongodb+srv://William:12345@cluster0-wldvr.mongodb.net/test?retryWrites=true&w=majority')
+//mongoose.connect('mongodb://localhost/StudentPortal')
   .then(() => console.log('connection successful'))
   .catch((err) => console.error(err));
 
