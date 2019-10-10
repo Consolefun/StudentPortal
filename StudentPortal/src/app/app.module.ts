@@ -15,7 +15,8 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabase, AngularFireDatabaseModule} from '@angular/fire/database';
 import { PortalComponent } from './pages/portal/portal.component';
 import { SettingComponent } from './pages/setting/setting.component';
-import { HomeportalComponent } from './pages/homeportal/homeportal.component';
+import { CourseComponent } from './pages/course/course.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const firebase = {
     apiKey: 'AIzaSyD28kitXFB0ybVo-ZiSX2nSn4fGX1Pv7Sg',
@@ -38,12 +39,13 @@ const firebase = {
     NavBarComponent,
     PortalComponent,
     SettingComponent,
-    HomeportalComponent
+    CourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features

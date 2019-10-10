@@ -8,8 +8,15 @@ import {AngularFireAuth} from '@angular/fire/auth';
   styleUrls: ['./portal.component.scss']
 })
 export class PortalComponent implements OnInit {
-  public currentStudent;
-
+  currentStudent;
+  StudentFirstName = '';
+  StudentLastName = '';
+  SecondEmailAddress = '';
+  StudentAddressOne = '';
+  StudentAddressTwo = '';
+  StudentCity = '';
+  StudentState = '';
+  StudentZipCode = '';
   constructor(private Studentdb: AngularFireDatabase, private StudentfAuth: AngularFireAuth) { }
 
   ngOnInit() {
@@ -21,6 +28,14 @@ export class PortalComponent implements OnInit {
           this.Studentdb.object('Profile/' + auth.uid).valueChanges().subscribe(
             data => {
               this.currentStudent = data;
+              this.StudentFirstName = this.currentStudent.StudentFirstName;
+              this.StudentLastName = this.currentStudent.StudentLastName;
+              this.SecondEmailAddress = this.currentStudent.SecondEmailAddress;
+              this.StudentAddressOne = this.currentStudent.StudentAddressOne;
+              this.StudentAddressTwo = this.currentStudent.StudentAddressTwo;
+              this.StudentCity = this.currentStudent.StudentCity;
+              this.StudentState = this.currentStudent.StudentState;
+              this.StudentZipCode = this.currentStudent.StudentZipCode;
             });
         }
       });

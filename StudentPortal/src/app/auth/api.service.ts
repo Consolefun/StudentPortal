@@ -37,27 +37,27 @@ export class ApiService {
     return body || {};
   }
 
-  getStudentsPortalData(): Observable<any> {
+  getCoursesPortalData(): Observable<any> {
     return this.http.get(apiUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
 
-  getStudentPortalData(id: string): Observable<any> {
+  getCoursePortalData(id: string): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.get(url, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
 
-  addStudentPortalData(data): Observable<any> {
+  addCoursePortalData(data): Observable<any> {
     return this.http.post(apiUrl, data, httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  updateStudentPortalData(id: string, data): Observable<any> {
+  updateCoursePortalData(id: string, data): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.put(url, data, httpOptions)
       .pipe(
@@ -65,7 +65,7 @@ export class ApiService {
       );
   }
 
-  deleteStudentPortalData(id: string): Observable<{}> {
+  deleteCoursePortalData(id: string): Observable<{}> {
     const url = `${apiUrl}/${id}`;
     return this.http.delete(url, httpOptions)
       .pipe(

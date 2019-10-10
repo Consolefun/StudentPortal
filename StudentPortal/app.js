@@ -5,11 +5,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 
 var mongoose = require('mongoose');
-mongoose.connect ('')
+mongoose.connect ('mongodb+srv://kmdk2t:123k123@cluster0-zrshr.mongodb.net/Data?retryWrites=true')
   .then(() => console.log('connection successful'))
   .catch((err) => console.error(err));
 
-var apiRouter = require('./routes/student');
+var apiRouter = require('./routes/courses');
 
 var app = express();
 
@@ -17,8 +17,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/StudentPortal')));
-app.use('/', express.static(path.join(__dirname, 'dist/StudentPortal')));
+app.use('/course', express.static(path.join(__dirname, 'dist/StudentPortal')));
+app.use('/home', express.static(path.join(__dirname, 'dist/StudentPortal')));
+app.use('/portal', express.static(path.join(__dirname, 'dist/StudentPortal')));
+app.use('/setting', express.static(path.join(__dirname, 'dist/StudentPortal')));
 app.use('/api', apiRouter);
+// app.use('/course', apiRouter);
 
 // app.use(express.static(path.join(__dirname, 'dist/StudentPortal')));
 // app.use('/student', express.static(path.join(__dirname, 'dist/StudentPortal')));

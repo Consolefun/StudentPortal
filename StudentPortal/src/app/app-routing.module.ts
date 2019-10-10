@@ -4,7 +4,7 @@ import {HomeComponent} from './pages/home/home.component';
 import {PortalComponent} from './pages/portal/portal.component';
 import {AuthGuard} from './auth/auth.guard';
 import {SettingComponent} from './pages/setting/setting.component';
-import {HomeportalComponent} from './pages/homeportal/homeportal.component';
+import {CourseComponent} from './pages/course/course.component';
 
 
 const WebRoutes: Routes = [
@@ -13,7 +13,7 @@ const WebRoutes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'portal', component: PortalComponent},
   { path: 'setting', component: SettingComponent},
-  { path: 'homeportal', component: HomeportalComponent}
+  { path: 'course', component: CourseComponent}
 ];
 
 @NgModule({
