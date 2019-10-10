@@ -13,9 +13,19 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabase, AngularFireDatabaseModule} from '@angular/fire/database';
+import { PortalComponent } from './pages/portal/portal.component';
+import { SettingComponent } from './pages/setting/setting.component';
+import { HomeportalComponent } from './pages/homeportal/homeportal.component';
 
 const firebase = {
-
+    apiKey: 'AIzaSyD28kitXFB0ybVo-ZiSX2nSn4fGX1Pv7Sg',
+    authDomain: 'studentportal-c1027.firebaseapp.com',
+    databaseURL: 'https://studentportal-c1027.firebaseio.com',
+    projectId: 'studentportal-c1027',
+    storageBucket: '',
+    messagingSenderId: '86313023526',
+    appId: '1:86313023526:web:5a3075ee60365a7c2a0ee7',
+    measurementId: 'G-BTJ2XGY5ZR'
   };
 
 
@@ -25,7 +35,10 @@ const firebase = {
     HomeComponent,
     FooterBarComponent,
     SideBarComponent,
-    NavBarComponent
+    NavBarComponent,
+    PortalComponent,
+    SettingComponent,
+    HomeportalComponent
   ],
   imports: [
     BrowserModule,
