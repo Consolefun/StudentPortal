@@ -1,5 +1,5 @@
 StudentPortal was a group project developed by 
-1.	**William D Hoang**
+1.	William D Hoang
 2.	Khalid Dhabbah
 
 
