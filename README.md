@@ -94,7 +94,7 @@ This project was aimed to make us apply everything we learned in Module 1 for we
 - Courses were done by William D Hoang -100%
 - Books were done by William D Hoang -100%
 - The calendar was done by William D Hoang -100%
-- Subcategories were done by William D Hoang (40)-100%
+- Subcategories were done by William D Hoang -100%
 - Profile update (setting) was done by Khalid Dhabbah -100%
 - Connecting to Firebase and MongoDB was done by William D Hoang and Khalid Dhabbah -100%
 - The report and the Wiki were done by William D Hoang -100%
